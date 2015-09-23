@@ -1,0 +1,29 @@
+div.header {
+    width: 100%;
+    margin: 10px;
+}
+
+.metadata {
+    float: right;
+}
+
+div.searchoptions {
+    width: 20%;
+    float: left;
+    margin: 10px;
+}
+
+select.searchoption {
+    display: block;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    width: 200px;
+}
+
+div.visualization-container {
+    float: left;
+}
+
+p.longSearchOptions {
+    width: 500px;
+}
