@@ -29,50 +29,11 @@
       <h1>Education Pathways</h1>
       <p class="metadata">Version: v<span app-version></span></p>
   </div>
-  <div>
-      <div class="searchoptions" ng-controller="SearchSelectorController">
-          <form ng-submit="doSearch()">
-              <label for="genderSelect">Gender</label>
-              <select class="searchoption" multiple name="genderSelect" id="genderSelect" size="3"
-                      ng-options="g.name for g in validSearchOptionValues.gender track by g.id"
-                      ng-model="selectedSearchOptions.gender"></select>
-              <label for="ethnicitySelect">Ethnicity</label>
-              <select class="searchoption" multiple name="ethnicitySelect" id="ethnicitySelect" size="3"
-                      ng-options="eth.name for eth in validSearchOptionValues.ethnicity track by eth.id"
-                      ng-model="selectedSearchOptions.ethnicity"></select>
-              <label for="povertySelect">Poverty</label>
-              <select class="searchoption" multiple name="povertySelect" id="povertySelect" size="3"
-                      ng-options="pov.name for pov in validSearchOptionValues.poverty track by pov.id"
-                      ng-model="selectedSearchOptions.poverty"></select>
-              <label for="lepSelect">English proficiency</label>
-              <select class="searchoption" multiple name="lepSelect" id="lepSelect" size="3"
-                      ng-options="l.name for l in validSearchOptionValues.lep track by l.id"
-                      ng-model="selectedSearchOptions.lep"></select>
-              <label for="meetMathSelect">Math proficiency</label>
-              <select class="searchoption" multiple name="meetMathSelect" id="meetMathSelect" size="3"
-                      ng-options="m.name for m in validSearchOptionValues.meet_math track by m.id"
-                      ng-model="selectedSearchOptions.meet_math"></select>
-              <label for="meetReadSelect">Reading proficiency</label>
-              <select class="searchoption" multiple name="meetReadSelect" id="meetReadSelect" size="3"
-                      ng-options="r.name for r in validSearchOptionValues.meet_read track by r.id"
-                      ng-model="selectedSearchOptions.meet_read"></select>
-              <label for="districtSelect">District</label>
-              <select class="searchoption"  name="districtSelect" id="districtSelect" size="3"
-                      ng-options="d.name for d in validSearchOptionValues.district track by d.id"
-                      ng-model="selectedSearchOptions.district"></select>
-              <br/>
-              <input type="submit" id="submit" value="Search" />
-              <input type="button" id="reset" value="Reset" ng-click="doReset()" />
-          </form>
-      </div>
-      <div class="visualization-container">
-          <ul class="nav nav-tabs">
-              <li><a href="#/view1">Raw</a></li>
-              <li><a href="#/view2">view2</a></li>
-          </ul>
-          <div ng-view></div>
-      </div>
-  </div>
+  <ul class="nav nav-tabs">
+      <li><a href="#/view1">Raw</a></li>
+      <li><a href="#/view2">view2</a></li>
+  </ul>
+  <div ng-view></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -82,7 +43,6 @@
   <script src="app.js"></script>
   <script src="controllers/ODOEStudentMetadataProvider.js"></script>
   <script src="controllers/ODOEStudentSearchData.js"></script>
-  <script src="controllers/searchSelectors.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="components/version/version.js"></script>

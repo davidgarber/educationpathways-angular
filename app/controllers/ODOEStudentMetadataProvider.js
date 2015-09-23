@@ -18,8 +18,8 @@ myApp.provider( 'ODOEStudentMetadata', function() {
     var getMetadata = function(http, type) {
         return http( { method: 'GET',
             url: uri + metadataPath + type + metadataPathTerminator,
-//            cache: false,
-            headers: { 'Accept' : '*/*' } })
+            cache: true,
+            headers: { 'Accept' : 'application/json' } })
             .then(function(response) {
                 return response.data;
             }, function(errorResponse) {
@@ -32,9 +32,10 @@ myApp.provider( 'ODOEStudentMetadata', function() {
 
     var getSearchResults = function(http, queryOptions) {
         return http( { method: 'GET',
-            url: uri + dataPath + dataPathTerminator + ((queryOptions.length > 0) ? ('?' + queryOptions) : ''),
+            url: uri + dataPath + dataPathTerminator,
+            params: queryOptions,
 //            cache: false,
-            headers: { 'Accept' : '*/*' } })
+            headers: { 'Accept' : 'application/json' } })
             .then(function(response) {
                 return response.data;
             }, function(errorResponse) {
@@ -59,20 +60,20 @@ myApp.provider( 'ODOEStudentMetadata', function() {
                 Data functions
              */
             search : function(searchOptions) {
-                var opts = '';
+                var opts = {};
                 for (vso in searchOptions) {
                     if (searchOptions.hasOwnProperty(vso)) {
+                        var vsoValues = [];
                         if ((searchOptions[vso] instanceof Array) && (searchOptions[vso].length > 0)) {
                             searchOptions[vso].forEach(function(value, idx, array) {
-                                if (opts.length > 0)
-                                    opts += "&";
-                                opts += (vso + "=" + value.id);
+                                vsoValues.push(value.id);
                             })
                         } else if ((searchOptions[vso] instanceof String) && (searchOptions[vso].length > 0)) {
-                            if (opts.length > 0)
-                                opts += "&";
-                            opts += (vso + "=" + g.id);
+                            vsoValues.push(searchOptions[vso].id);
                         }
+
+                        if (vsoValues.length > 0)
+                            opts[vso] = vsoValues;
                     }
                 }
 
