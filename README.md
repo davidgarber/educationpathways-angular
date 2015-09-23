@@ -13,12 +13,11 @@ In order to install this project, do the following:
 
 npm install 
 
-This will install a number of different tools used as part of this project.  One of the packages installed during this step is Bower, a package manager; Bower MUST be installed in order for the other installation steps to succeed.
+This will install a number of different tools used as part of this project, including "bower", a package manager.  Once the npm install completes a "bower install" step will start to install the remaining dependencies.
 
-4. From the same directory, use the "bower install" command to install packages using Bower.  This will install AngularJS and other packages necessary for the system to run.  Bower won't say much while it's working, but if you see a "bower_components" directory appear then all is well.
-5. Install a simple Node.js based web server using the command "npm install -g http-server".  This will allow you to run the application locally.
-6. Use the command "http-server &lt;install-dir&gt;/app" to start the web server.  The string "&lt;install-dir&gt;/app" references the "app" subdirectory of the directory into which you cloned this project.
-7. In your browser, go to "http://localhost:8080".
+4. Install a simple Node.js based web server using the command "npm install -g http-server".  This will allow you to run the application locally.
+5. Use the command "http-server &lt;install-dir&gt;/app" to start the web server.  The string "&lt;install-dir&gt;/app" references the "app" subdirectory of the directory into which you cloned this project.
+6. In your browser, go to "http://localhost:8080".
 
 When you're ready to stop the web server, just go to the window it's running in and hit Ctrl-C.
 
