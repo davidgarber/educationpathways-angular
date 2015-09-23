@@ -15,6 +15,7 @@ app/bower-components
 # Miscellaneous other stuff
 .jshintrc
 .travis.yml
+.idea
 
 # Coverage directory used by tools like istanbul
 coverage
