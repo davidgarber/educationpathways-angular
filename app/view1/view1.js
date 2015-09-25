@@ -9,29 +9,30 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [ '$scope', 'ODOEStudentSearchData', function($scope, ssd) {
-    $scope.validSearchOptionValues = ssd.getValidSearchOptionValues();
+.controller('View1Ctrl', [ '$scope', 'ODOEStudentMetadata', function($scope, smd) {
+    $scope.validSearchOptionValues = smd.getValidSearchOptionValues();
 
-    $scope.selectedSearchOptions = ssd.selectedSearchOptions;
+//    $scope.selectedSearchOptions = ssd.selectedSearchOptions;
+    $scope.selectedSearchOptions = {};
     $scope.selectedSearchOptionsAsJSON = function() {
         return JSON.stringify($scope.selectedSearchOptions);
     }
 
-    $scope.searchResults = ssd.searchResults;
+//    $scope.searchResults = ssd.searchResults;
+    $scope.searchResults = {};
     $scope.searchResultsAsJSON = function() {
         return JSON.stringify($scope.searchResults);
     }
 
     $scope.doSearch = function() {
-        ssd.initiateSearch().then(function(searchResults) {
+        smd.search($scope.selectedSearchOptions).then(function(searchResults) {
             $scope.searchResults = searchResults;
         });
     };
 
     $scope.doReset = function() {
-        ssd.resetSelectedSearchOptions();
-        ssd.resetSearchResults();
-        $scope.searchResults = ssd.searchResults;
+        $scope.selectedSearchOptions = {};
+        $scope.searchResults = {};
     }
 
 }]);

@@ -17,13 +17,19 @@ select.searchoption {
     display: block;
     overflow-x: scroll;
     overflow-y: scroll;
-    width: 200px;
+    width: 250px;
 }
 
 div.visualization-container {
     float: left;
+    width: 75%;
 }
 
 p.longSearchOptions {
     width: 500px;
+}
+
+#chart1 svg.multiBarHorizontalChart {
+    height: 1000px;
+    width: 80%;
 }

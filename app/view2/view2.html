@@ -1,5 +1,12 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="searchoptions">
+    <p>Compare cohort participation by path:</p>
+    <input type="radio" ng-repeat-start="opt in searchOptions" name="optionGroup"
+           id="{{opt.optionName}}" ng-model="$parent.selectedOption" ng-change="onOptionUpdated()"
+           value="{{opt.optionName}}">&nbsp;<label for="{{opt.optionName}}">By {{opt.optionDisplayName}}</label><br ng-repeat-end/>
+</div>
+<div class="visualization-container">
+    <div id='chart1'>
+        <svg class="multiBarHorizontalChart"></svg>
+        <!-- <p>{{chartData}}</p> -->
+    </div>
+</div>

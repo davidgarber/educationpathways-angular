@@ -2,7 +2,9 @@
 "educationpathways-angular" is an AngularJS-based app to visualize education data.  
 
 ## What can I do with this thing?
-Well, so far not much.  It does make requests to the EchoNW API, and it will give you options to select the various search criteria that the API allows, but there's no graphics or visualizations in place yet.  
+So far there's only one chart - 'Participation by path'.  This allows you to visualize participation in each path ('HXX', 'HG4B', etc.) by gender, ethnicity, etc.
+
+I still need to add some logic to re-interpret the 'H...' strings as something people will understand, and resize the graphic based on the number of valid search values.
 
 ## Installation
 In order to install this project, do the following:

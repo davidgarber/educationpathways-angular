@@ -31,7 +31,7 @@
   </div>
   <ul class="nav nav-tabs">
       <li><a href="#/view1">Raw</a></li>
-      <li><a href="#/view2">view2</a></li>
+      <li><a href="#/view2">Participation<br/>by path</a></li>
   </ul>
   <div ng-view></div>
 
@@ -40,9 +40,13 @@
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+
+  <!-- Note to self: should probably copy these to a local 'assets' library once we know for sure we want to use them. -->
+  <script src="http://nvd3.org/assets/lib/d3.v3.js" type="text/javascript"></script>
+  <script src="http://nvd3.org/assets/js/nv.d3.js" type="text/javascript"></script>
+
   <script src="app.js"></script>
   <script src="controllers/ODOEStudentMetadataProvider.js"></script>
-  <script src="controllers/ODOEStudentSearchData.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="components/version/version.js"></script>
